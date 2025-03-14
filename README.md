@@ -1,2 +1,2 @@
 # LeetCode
-This GitHub repository has my solutions to programming questions found on LeetCode!
+This GitHub repository is for solutions programming questions on LeetCode!
