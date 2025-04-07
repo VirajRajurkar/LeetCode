@@ -27,17 +27,15 @@ Constraints:
 str1 and str2 consist of English uppercase letters
 
 """
-
-
 class Solution(object):
-    def gcdOfStrings(str1, str2):
-        """
-        :type str1: str
-        :type str2: str
-        :rtype: str
-        """
+    def gcdOfStrings(self, str1, str2):
 
-        print ("...")
-        
-    gcdOfStrings(str1 = "Viraj", str2 ="Python")
-        
+    
+        return "..."
+
+# Example usage
+
+solution = Solution()
+print(solution.gcdOfStrings("ABCABC", "ABC"))  # Output: "ABC"
+print(solution.gcdOfStrings("ABABAB", "ABAB"))  # Output: "AB"
+print(solution.gcdOfStrings("LEET", "CODE"))    # Output: ""
