@@ -14,29 +14,24 @@ Explanation: The merged string will be merged as so:
 word1:  a   b   c
 word2:    p   q   r
 merged: a p b q c r
+        a p b q c r
 """
 
-word1 = "abc"
-word2 = "pqr"
-word1New = ""
-word2New = ""
+def mergeAlternately(word1, word2):
+    wordOutput = ""
+    i, j = 0, 0
 
-for i in range(len(word1)):
-    word1New += word1[i]
+    while i < len (word1) or j < len(word2):
+        if i < len(word1):
+            wordOutput +=  word1[i]
+            i +=1
+        if j < len(word2):
+            wordOutput +=  word2[j] 
+            j += 1
 
-    if i <= (len(word1)-1):
-        word1New += " "
+    return (wordOutput )
 
-
-for i in range(len(word2)):
-    word2New += word2[i]
-
-    if i <= (len(word2)-1):
-        word2New += " "
-
-word2New = " " + word2New
-
-
-print (word1New)
-print (word2New)
-
+print(mergeAlternately("abcd", "pq")) #outputs "apbqcd"
+print(mergeAlternately("ab", "pqrs")) #outputs "apbqrs"
+print(mergeAlternately("abc", "pqr")) #outputs "apbqcr"
+print(mergeAlternately("abcd", "")) #outputs "abcd"
