@@ -27,15 +27,19 @@ Constraints:
 str1 and str2 consist of English uppercase letters
 
 """
-class Solution(object):
-    def gcdOfStrings(self, str1, str2):
 
-    
-        return "..."
+def gcdOfStrings(self, str1, str2):
+    def is_divisible(s, t):
+        return s == t * (len(s) // len(t))
 
-# Example usage
+    min_len = min(len(str1), len(str2))
 
-solution = Solution()
-print(solution.gcdOfStrings("ABCABC", "ABC"))  # Output: "ABC"
-print(solution.gcdOfStrings("ABABAB", "ABAB"))  # Output: "AB"
-print(solution.gcdOfStrings("LEET", "CODE"))    # Output: ""
+    for i in range(min_len, 0, -1):
+        candidate = str1[:i]
+        if len(str1) % len(candidate) == 0 and len(str2) % len(candidate) == 0:
+            if is_divisible(str1, candidate) and is_divisible(str2, candidate):
+                return candidate
+            
+    return ""
+
+print(gcdOfStrings("ABCABC", "ABC"))  # Output: "ABC"
