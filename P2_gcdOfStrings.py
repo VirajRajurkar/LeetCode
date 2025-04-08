@@ -5,8 +5,6 @@ For two strings s and t, we say "t divides s" if and only if s = t + t + t + ...
 
 Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
 
- 
-
 Example 1:
 
 Input: str1 = "ABCABC", str2 = "ABC"
@@ -20,15 +18,13 @@ Example 3:
 Input: str1 = "LEET", str2 = "CODE"
 Output: ""
  
-
 Constraints:
 
 1 <= str1.length, str2.length <= 1000
 str1 and str2 consist of English uppercase letters
-
 """
 
-def gcdOfStrings(self, str1, str2):
+def gcdOfStrings(str1, str2):
     def is_divisible(s, t):
         return s == t * (len(s) // len(t))
 
@@ -43,3 +39,5 @@ def gcdOfStrings(self, str1, str2):
     return ""
 
 print(gcdOfStrings("ABCABC", "ABC"))  # Output: "ABC"
+print(gcdOfStrings("ABCD", "AB"))  # Output: "AB"
+print(gcdOfStrings("", "ABC"))  # Output: ""
